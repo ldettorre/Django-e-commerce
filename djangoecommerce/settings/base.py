@@ -25,7 +25,7 @@ SECRET_KEY = 'by6ct-)7fu1@__o75o-cq-)i9#0h!^(jr_h73l0)y=vz=26m7t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG")
 
-ALLOWED_HOSTS = ['djangoecommerce-lucad.c9users.io']
+ALLOWED_HOSTS = ['djangoecommerce-lucad.c9users.io','django-ecommerce-luca.herokuapp.com']
 
 
 # Application definition
