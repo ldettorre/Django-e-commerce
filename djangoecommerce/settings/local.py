@@ -2,6 +2,8 @@ from .base import *
 
 SECRET_KEY ='by6ct-)7fu1@__o75o-cq-)i9#0h!^(jr_h73l0)y=vz=26m7t'
 
+DEBUG = os.environ.get("DEBUG", True)
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
