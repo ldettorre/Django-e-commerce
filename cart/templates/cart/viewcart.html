@@ -14,12 +14,19 @@
             <p><span class="boldtext">Brand:</span> {{p.product.brand}}</p>
             <p><span class="boldtext">Total:</span> {{p.sub_total}}</p>
             <p><span class="boldtext">Amount in Cart:</span> {{p.quantity}}</p>
-                
+
+            <form method="POST" action="{% url 'delete_item' %}">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="{{p.product.id}}" />
+                <input type="submit" value="Delete Item" />
+            </form>
         </div>
-        
+
         {% endfor %}
 
     </div>
-</div>
-<h3>Total: {{ total }} </h3>
+    </div>
+    <h3>Total: {{ total }} </h3>
+
+    
     {% endblock content %}
