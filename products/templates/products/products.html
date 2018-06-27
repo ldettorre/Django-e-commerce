@@ -1,20 +1,24 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <h1>This is the products page</h1>
 
-{% for product in products %}
-<img src= "{{ MEDIA_URL }}{{product.image}}" width="200px" height="200px">
-<p> Name: {{ product.name }}</p>
-<p> Description: {{ product.description }}</p>
-<p>Price:{{ product.price }}</p>
-<p>Brand:{{ product.brand }}</p>
 
-<form method="POST"action="{% url 'add_to_cart' %}">
-    {% csrf_token %}
-    <input type="hidden" name="product_id" value="{{product.id}}"/>
-    <input type="submit" value="Add To Cart"/>
-</form>
+<div class="row">
+    <div class="col-sm-4">
+        {% for product in products %}
 
-{% endfor %}
+        <img src="{{ MEDIA_URL }}{{product.image}}" width="200px" height="200px">
+        <p> Name: {{ product.name }} </p>
+        <p> Description: {{ product.description }} </p>
+        <p>Price: {{ product.price }} </p>
+        <p>Brand: {{ product.brand }} </p>
 
+        <form method="POST" action="{% url 'add_to_cart' %}">
+            {% csrf_token %}
+            <input type="hidden" name="product_id" value="{{product.id}}"/>
+            <input type="submit" value="Add To Cart"/>
+        </form>
+
+        {% endfor %}
+    </div>
+</div>
 {% endblock content %}

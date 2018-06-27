@@ -1,0 +1,25 @@
+{% extends "base.html" %} {% block content %}
+
+
+<div="container">
+    <div class="row">
+
+
+        {% for p in cart_items %}
+        <div class="col-md-4 outline">
+            <div class="post-thumb"><img src="{{ MEDIA_URL }}{{p.product.image}}" width="200px" height="200px"></div>
+            <p><span class="boldtext">Name:</span> {{p.product.name}}</p>
+            <p><span class="boldtext">Description:</span> {{p.product.description}}</p>
+            <p><span class="boldtext">Price:</span> {{p.product.price}}</p>
+            <p><span class="boldtext">Brand:</span> {{p.product.brand}}</p>
+            <p><span class="boldtext">Total:</span> {{p.sub_total}}</p>
+            <p><span class="boldtext">Amount in Cart:</span> {{p.quantity}}</p>
+                
+        </div>
+        
+        {% endfor %}
+
+    </div>
+</div>
+<h3>Total: {{ total }} </h3>
+    {% endblock content %}
