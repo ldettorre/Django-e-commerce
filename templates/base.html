@@ -64,8 +64,23 @@
             <div class="col-md-12">
                 <div class="panel">
                     <div class="panel-body">
-                        <!--blogpost entries-->
+                        
+                        
+                        {% if messages %}
+        <div class="alert alert-success">
+            <div class="messages">
+                {% for message in messages %}
+                  {{ message }}
+                  
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
                         {% block content %}
+                        
+                        
+                        
+                        
                         {% endblock %}
                         <!--blogpost entries-->
                     </div>

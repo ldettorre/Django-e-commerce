@@ -1,4 +1,10 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
+{% load static from staticfiles %}
+{% block content %}
+
+
+
+{% if cart_items|length > 0 %}
 
 
 <div="container">
@@ -30,9 +36,13 @@
     
     
                
-                <a href="{% url 'checkout' %}" class="btn btn-success" role="button">Go To Check Out</a>
+<a href="{% url 'checkout' %}" class="btn btn-success" role="button">Go To Check Out</a>
                 
-    
+    {% else %}
+    <h2>Your cart is empty</h2>
+    <img src="{% static 'img/empty.jpg' %}" height="200px" width="200px"></img>
+     
+    {% endif %}
 
     
     {% endblock content %}
